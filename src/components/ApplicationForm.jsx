@@ -100,7 +100,12 @@ const ApplicationForm = () => {
                 <div className="form-wrapper">
                     <div className="text-center" style={{ marginBottom: '32px' }}>
                         <h2 className="section-title">参加申し込みフォーム</h2>
-                        <p className="section-subtitle" style={{ fontSize: '0.95rem' }}>以下のフォームに必要事項をご入力の上、「送信する」ボタンを押してください。</p>
+                        <p className="section-subtitle" style={{ fontSize: '0.95rem' }}>
+                            以下のフォームに必要事項をご入力の上、「送信する」ボタンを押してください。<br />
+                            <span style={{ display: 'inline-block', marginTop: '8px', color: 'var(--primary-color)', fontWeight: '600', backgroundColor: 'var(--bg-secondary)', padding: '8px 16px', borderRadius: '4px' }}>
+                                ※開催場所の詳細については、ご記入いただいたメールアドレスへ直接ご案内をお送りいたします。
+                            </span>
+                        </p>
                     </div>
 
                     {submitStatus === 'success' ? (
