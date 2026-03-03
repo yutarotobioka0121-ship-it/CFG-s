@@ -16,12 +16,12 @@ const Hero = () => {
                 <p className="hero-subtitle">
                     {siteConfig.heroSubtitle.split('\n').map((line, i) => (
                         <React.Fragment key={i}>
-                            <span className="keep-word">{line}</span>
+                            {line}
                             {i < siteConfig.heroSubtitle.split('\n').length - 1 && <br />}
                         </React.Fragment>
                     ))}
                 </p>
-                <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginTop: '32px' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center', marginTop: '32px' }}>
                     <a href="#schedule" className="btn btn-primary btn-large">開催日程を見る</a>
                     <a href="#about" className="btn" style={{ backgroundColor: 'white', border: '1px solid #e5e7eb', color: '#374151' }}>詳細を知る</a>
                 </div>

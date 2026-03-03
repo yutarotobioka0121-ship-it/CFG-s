@@ -180,6 +180,23 @@ h6 {
     display: none;
     /* Hide standard links on mobile to keep it simple, show only CTA */
   }
+
+  .logo {
+    font-size: 1.25rem;
+    /* スマホでロゴを小さくして折り返しを防ぐ */
+    letter-spacing: 0.05em;
+  }
+
+  .header-container {
+    gap: 8px;
+    /* 右上のボタンとの間隔を詰める */
+  }
+
+  .header .btn {
+    padding: 8px 16px;
+    /* スマホではナビのボタンを小さくする */
+    font-size: 0.85rem;
+  }
 }
 
 /* Hero Section */
@@ -219,16 +236,19 @@ h6 {
 }
 
 .hero-title {
-  font-size: clamp(2rem, 4.5vw, 4rem);
-  /* 幅に合わせて調整される割合を少し抑える */
+  font-size: clamp(1.75rem, 4.5vw, 4rem);
+  /* 幅に合わせて小さく（スマホでもはみ出さないように下限を1.75remに） */
   margin-bottom: 32px;
   color: #ffffff;
   /* Override for dark background */
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  word-break: auto-phrase;
+  /* 最新ブラウザ向けの自動よしな改行 */
 }
 
 .hero-subtitle {
-  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  /* スマホで縮小 */
   color: #f3f4f6;
   /* Override for dark background */
   opacity: 0.9;
