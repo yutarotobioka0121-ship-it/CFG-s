@@ -8,7 +8,7 @@ const Hero = () => {
                 <h1 className="hero-title">
                     {siteConfig.heroTitle.split('\n').map((line, i) => (
                         <React.Fragment key={i}>
-                            {i === 1 ? <span className="text-highlight">{line}</span> : line}
+                            {i === 1 ? <span className="text-highlight keep-word">{line}</span> : <span className="keep-word">{line}</span>}
                             {i < siteConfig.heroTitle.split('\n').length - 1 && <br />}
                         </React.Fragment>
                     ))}
@@ -16,7 +16,7 @@ const Hero = () => {
                 <p className="hero-subtitle">
                     {siteConfig.heroSubtitle.split('\n').map((line, i) => (
                         <React.Fragment key={i}>
-                            {line}
+                            <span className="keep-word">{line}</span>
                             {i < siteConfig.heroSubtitle.split('\n').length - 1 && <br />}
                         </React.Fragment>
                     ))}

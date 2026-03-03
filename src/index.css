@@ -47,11 +47,17 @@ a {
   color: inherit;
 }
 
+/* --- Utilities --- */
 .container {
-  width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
+}
+
+/* 単語の途中での予期せぬ改行を防ぐ */
+.keep-word {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 /* Typography */
@@ -73,16 +79,21 @@ h6 {
 
 /* Buttons */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 32px;
-  border-radius: var(--radius-full);
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  /* シャープな印象 */
   font-weight: 500;
-  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  /* ホバー時のトランジションを滑らかに */
+  border: none;
   cursor: pointer;
-  transition: var(--transition);
-  border: 1px solid transparent;
+  text-align: center;
+  white-space: nowrap;
+  /* ボタン内の文字の改行を防ぐ */
   font-size: 0.95rem;
 }
 
