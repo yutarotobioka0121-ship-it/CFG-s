@@ -210,7 +210,8 @@ h6 {
 
 .hero-content {
   text-align: center;
-  max-width: 860px;
+  max-width: 1000px;
+  /* 文字がはみ出さないように枠を広げる（元860px） */
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -218,7 +219,8 @@ h6 {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  /* 幅に合わせて調整される割合を少し抑える */
   margin-bottom: 32px;
   color: #ffffff;
   /* Override for dark background */
