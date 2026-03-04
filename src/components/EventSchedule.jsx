@@ -62,12 +62,22 @@ const EventSchedule = () => {
                             </div>
                             <div style={{ marginTop: '24px', textAlign: 'center' }}>
                                 <a
-                                    href={`#apply?date=${event.id}`}
+                                    href="#apply"
                                     className={`btn ${event.status === 'open' ? 'btn-primary' : 'btn-disabled'}`}
                                     style={{ width: '100%' }}
                                     onClick={(e) => {
-                                        if (event.status !== 'open') e.preventDefault();
-                                        // TODO: 実際のフォームへのスクロールと選択処理を後で追加
+                                        e.preventDefault();
+                                        if (event.status !== 'open') return;
+
+                                        // URLを更新して、フォームに変更を通知
+                                        window.history.pushState(null, '', `#apply?date=${event.id}`);
+                                        window.dispatchEvent(new Event('hashchange'));
+
+                                        // フォームまでスクロール
+                                        const applySection = document.getElementById('apply');
+                                        if (applySection) {
+                                            applySection.scrollIntoView({ behavior: 'smooth' });
+                                        }
                                     }}
                                 >
                                     {event.status === 'open' ? 'この日程に申し込む' : '受付終了'}

@@ -40,6 +40,22 @@ const ApplicationForm = () => {
         fetchEvents();
     }, []);
 
+    // URLのハッシュ変更（日程ボタンのクリック等）を検知してフォーム選択を更新
+    useEffect(() => {
+        const handleHashChange = () => {
+            const hash = window.location.hash;
+            if (hash && hash.includes('date=')) {
+                const dateId = hash.split('date=')[1];
+                if (formEvents.find(e => e.id === dateId && e.status === 'open')) {
+                    setFormData(prev => ({ ...prev, eventId: dateId }));
+                }
+            }
+        };
+
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+    }, [formEvents]);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
