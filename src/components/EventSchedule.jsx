@@ -53,10 +53,10 @@ const EventSchedule = () => {
                                 <div className="detail-item">
                                     <span className="detail-icon">📍</span>
                                     <span className="detail-text">
-                                        {event.location.split('\n').map((line, i) => (
+                                        {event.location.split(/\\n|\n|\/\//).map((line, i, arr) => (
                                             <React.Fragment key={i}>
-                                                {line}
-                                                {i < event.location.split('\n').length - 1 && <br />}
+                                                {line.trim()}
+                                                {i < arr.length - 1 && <br />}
                                             </React.Fragment>
                                         ))}
                                     </span>
